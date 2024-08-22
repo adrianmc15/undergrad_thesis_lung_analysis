@@ -1,0 +1,14 @@
+Should I dive into design first? Not necessarily, think and plan first!
+-----------------------------------------------------------------------
+
+Q: What if I skip lit review and dive into design?
+A:
+
+Getting into design is good. Getting a draft methodology started before going too deep into design is probably even better. But you can do some explorative design, then come back to the methodology once you have a better idea of what to do.
+
+Regarding lit review: A good practice is to do a bit of lit review, mainly to see what’s happening in the field related to the topic you are pursuing – to see that other’s haven’t done the same and to perhaps adjust things according to what a good gap in knowledge / research is you plan to fill. But, you don’t need to (and it is a waste to) do a full lit review – the lit review tends to build up over the project and then one refines and tidies it up towards the final stages and focusing on writeup (around the last 2-3 months of a MSc).
+
+I sometimes use the analysis of changing duty cycle between writing and development, and one should probably add reading to it as well (maybe 3-phase power would be a better metaphor: effort going to writing, reading and development, but keeping the sum of level of effort fairly constant at any one time). Although unlike 3-phase the amplitudes would probably change, sometimes reading in the first few months and reviewing the reading and polishing the lit review in the last few months. Writing should be a bit kept going throughout but the last few methods it tends to be only writing and a little reading. Design would get the most attention from say month 1 or 2 and then taper off towards the final stages.
+
+In summary, getting some design done is good, but don’t neglect the methodology as you don’t want to waste effort in the design if you potentially realize there other things needed in the design to satisfy the testing and experiments you want to do (the document methodology vs design helps explain the difference between these).
+
