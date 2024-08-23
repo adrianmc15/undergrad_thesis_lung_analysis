@@ -17,6 +17,7 @@
             4. (.) [2003, Academic Radiology] Automated lung segmentation for thoracic CT: Impact on computer-aided diagnosis (https://www.sciencedirect.com/science/article/pii/S1076633204003745)
             5. (.) [2001, IEEE Transactions on Medical Imaging] Automatic lung segmentation for accurate quantitation of volumetric X-ray CT images (https://doi.org/10.1109/42.929615)
             6. (+) [2024, Medical Physics] A multiscale 3D network for lung nodule detection using flexible nodule modeling
+            9. (+) [2021, IEEE Access] U-Net and Its Variants for Medical Image Segmentation: A Review of Theory and Applications (https://doi.org/10.1109/ACCESS.2021.3086020)
             
             
         Extra:
@@ -231,7 +232,7 @@ A similar task to thesis plans. Similar network structure to U-net idea. Very us
 Essentially, an explanation of 3 essential issues in CT dose and image quality: 1) CT dose and the measurement of it 2) CT image quality. The chapter essentially explains how CT image dose works, and how CT scans actually cause issues with image quality from a physical perspective. It also goes through the main ways of measuring image quality and dose and the respective pitfalls
 
 #### Critique
-__Strengths:__ Informative and useful background information, describes several different aspects
+__Strengths:__ Informative and useful background information, describes several different aspects <br>
 __Weaknesses:__ No actual experiment was done, so there are no results or arguments to refute etc., does not mention CNR
 
 #### Relevance
@@ -251,3 +252,6 @@ __Weaknesses:__ Limited in scope to Pediatrics, but still relevant in terms of t
 
 #### Relevance
 Provides a good starting point on relevant metrics to use in the study in terms of dose, but also provides the basis of how image quality and noise is described and quantified in CT imaging.
+
+---
+### 9. (+) [2021, IEEE Access] U-Net and Its Variants for Medical Image Segmentation: A Review of Theory and Applications (https://doi.org/10.1109/ACCESS.2021.3086020)
