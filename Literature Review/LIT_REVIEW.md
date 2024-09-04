@@ -45,15 +45,20 @@
             [2012, Review of Cardiovascular Therapy] Low-dose cardiac imaging: reducing exposure but not accuracy (https://go-gale-com.ezproxy.uct.ac.za/ps/i.do?p=AONE&u=unict&id=GALE|A283018093&v=2.1&it=r)
             [2018, Sensors] Poisson–Gaussian Noise Analysis and Estimation for Low-Dose X-ray Images in the NSCT Domain (https://www.mdpi.com/1424-8220/18/4/1019)
             [2004, AJR] Low-Dose Chest CT: Optimizing Radiation Protection for Patients https://ajronline.org/doi/full/10.2214/ajr.183.3.1830809
+            
 
     - Removing Noise (Denoising)
 
-            *[2020, Biomed. Sig. Proc. & Control] A review on medical image denoising algorithms https://www.sciencedirect.com/science/article/pii/S1746809420301920
-            *[2018, Biomed. Sig. Proc. & Control] A review on CT image noise and its denoising (https://doi.org/10.1016/j.bspc.2018.01.010)
+            10. (*) [2020, Biomed. Sig. Proc. & Control] A review on medical image denoising algorithms https://www.sciencedirect.com/science/article/pii/S1746809420301920
+            11. (*) [2018, Biomed. Sig. Proc. & Control] A review on CT image noise and its denoising (https://doi.org/10.1016/j.bspc.2018.01.010)
+            12. (*) [2023, Medical Physics] CT image denoising methods for image quality improvement and radiation dose reduction https://aapm.onlinelibrary.wiley.com/doi/pdf/10.1002/acm2.14270
+            13. (+) [2020, CVPR] Wavelet Integrated CNNs for Noise-Robust Image Classification (https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_Wavelet_Integrated_CNNs_for_Noise-Robust_Image_Classification_CVPR_2020_paper.pdf)
+
+        ^These reviews are very useful, so include references to some of the best algorithms described (maybe 4 references)^
+
             [2017, IEEE Transactions on Medical Imaging] Robust Low-Dose CT Sinogram Preprocessing via Exploiting Noise-Generating Mechanism (https://ieeexplore.ieee.org/abstract/document/8086204)
             [2012, IPEM] Ultra-low dose CT attenuation correction for PET/CT (https://iopscience.iop.org/article/10.1088/0031-9155/57/2/309/meta)
-            *[2020, CVPR] Wavelet Integrated CNNs for Noise-Robust Image Classification (https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_Wavelet_Integrated_CNNs_for_Noise-Robust_Image_Classification_CVPR_2020_paper.pdf)
-
+            
 
     - Simulating Noise (X-Ray & CT)
 
@@ -255,3 +260,112 @@ Provides a good starting point on relevant metrics to use in the study in terms 
 
 ---
 ### 9. (+) [2021, IEEE Access] U-Net and Its Variants for Medical Image Segmentation: A Review of Theory and Applications (https://doi.org/10.1109/ACCESS.2021.3086020)
+
+----
+
+
+### 10. A review on medical image denoising algorithms
+    [2020, Biomed. Sig. Proc. & Control]  https://www.sciencedirect.com/science/article/pii/S1746809420301920
+
+#### Summary
+The paper describes the following: Image Noise and how it comes about, surveys the various types of denoising methods available and goes through various metrics commonly used for describing results. It then completes a brief experiment demonstrating these things. The paper talks about a variety of modalities, but also talks a lot about CT imaging. It talks about how CT works (with sinograms and back-projection), and how low-dose noise comes about. It describes the origin of the noise (through statistical fluctuations of X-ray quanta --> quantum noise) and the modelling of it through the Poisson-Gaussian distrbution. Other models exist that use the Central Limit Theorem, that assume "Additive Gaussian statistics". The paper describes the features of a good denoising algorithm (preservation of edges, maintaining structural similarity, complexity and non-essentialness of prior databases).
+
+It then categorizes and describes various different types of denoising algorithms for CT as being Sinogram filtering (applying filters directly in the sinogram domain), Iterative reconstruction techniques (using other information about the scan - from the DICOM header for example), and Post-processing techniques (Including the use of neural networks and image domain techniques).
+
+![alt text](<Screenshot 2024-09-03 at 7.35.22 PM.png>)
+
+The paper discusses different important metrics used to describe medical image quality and noise. The main metrics used for this paper are PSNR, FSIM (Feature Similarity) and EPI (Edge Preservation Index). This is a very useful because (as the paper says), edge preservation is very important for diagnosis and segmentation. 
+
+The brief experiment with some of the different techniques show how the methods work differently based for different metrics (none of which are task based). One experiment was done with a simulation of Gaussian Additive noise applied to a dataset of clean images. The same algorithms were then run on real LDCT images, but instead information entropy (randomness) was used as a metric of measuring the noise.
+
+#### Critique
+__Strengths:__ very good overview of what different techniques exist and how they are used <br>
+__Weaknesses:__ Does not describe task-based metrics (more focussed on the denoising itself)
+
+#### Relevance
+Useful for creating an understanding of the different standard denoising techniques available. Great overview of how the noise is created and usually modelled. Great discussion of what actually useful metrics are, and also a very useful framework for categorizing and understanding the different types of denoising algorithms.
+
+---
+### 11. A review on CT image noise and its denoising
+    [2018, Biomed. Sig. Proc. & Control] (https://doi.org/10.1016/j.bspc.2018.01.010)
+
+
+#### Summary
+A great overview of CT noise in general. The paper goes through a variety of aspects related to noise including the issues with CT image reconstruction, CT noise, different types of denoising methods and finally completes a comparative analysis of some of the main algorithms described.
+
+Noise is difficult to model in CT because the noise distribution of the final projection / result will differ based on the reconstruction algorithm used, and various factors related to the settings and initial processing of the original machine. 
+
+![alt text](<scrnsht_additive_gaussian_noise_description.png>)
+
+> The problem to identify noise in CT image is that all the intermediate steps, like interpolations or filtering with the convolution kernel, introduce correlations to the noisy data. Due to these dependencies, the noise distribution in the final CT image is usually unknown.
+
+There are different approaches to accurately modelling it depending on the type of scanner and the parameters. MDCT (multi-detector) is accurately described by a Gaussian distribution, while single detector (unclear) is best modeled with Poisson. But generally, based on the literature, it is additive Gaussian noise. In the comparative analysis provided by the paper, the Central Limit Theorem is used and puts forward that noise can be modeled using a Gaussian distribution. The reason for this is that each voxel in an image is the result of many different projections with differing noise distributions. The paper describes one method in particular that quite well models this fact in its denoising which would be useful to mention
+
+Different sources of noise are described: Random noise, Statistical noise, Electronic noise and Roundoff errors, with Statistical (quantum) noise as the most important (dose-related).
+
+Four criteria are provided for describing and comparing denoising algorithms: <br>
+(i) visibility of the artifacts; <br>
+(ii) preservation of edge details; <br>
+(iii) visibility of low contrast objects; <br>
+(iv) preservation of the texture. <br>
+
+These correspond to the metrics discussed in the review: <br>
+(i) SSIM - structural similarity <br>
+(ii) RMSE <br>
+(iii) PSNR <br>
+(iv) IQI (Image Quality Index) <br>
+(v) ED (Entropy Difference) <br>
+(vi) DIV (Difference in Variance) <br>
+(vii) GMSD - describes pixelwise gradient similarity <br>
+
+The paper then goes through the descriptions of many different types of denoising algorithms in both the spatial and trasnform domain. Initially they just used LPFs, then moved onto using projection-based techniques because the reconstruction algorithms of CT tended to cause blurriness - this is where the development of filtered backprojection (FBP) comes from. It also describes Iterative Reconstruction Approaches for noise suppression which worked by optimizing statistical objective functions.
+
+Then described are post-processing approaches in 1) the spatial domain and 2) the transform domain (mostly using the wavelet transform). Linear and non-linear filters are described, with one of the most important advances being the Wiener filter. Total Variation (TV) was another significant advancement, which led to one of the better performing algorithms used in the comparative analysis. The Split Bregman method was also significant. Dictionary Learning methods are described, which essentially uses dual energy CT info to provided better noise suppression. Bilateral and NLM (also mentioned in [10]) were also significant. This has since developed into more advanced methods combined with TV in Probabilistic NLTV (PNLTV) and Pointwise Box-Counting Dimension (PWBCD). Deep-learning algorithms such as the Autoencoder and Residual encoder decoder CNN (RED-CNN). Transform domain filtering is also described, which mostly focusses on Wavelet Transform based techniques, and the development of techniques within it, such as dynamic thresholding. BM3D, which is the state of the art for Additive White Gaussian Noise is also described.
+
+The main algorithms are also described and tested in a comparative study, where each one is used on the same dataset. The results are in the paper, but the advantages and disadvantages are summarised below:
+
+![alt text](<screenshot_algo_summary.png>)
+
+#### Critique
+__Strengths:__ Overall very useful overview, will be used as a basis for the discussion of noise and denoising, will also mention papers and techniques for additional references <br>
+__Weaknesses:__ ...
+
+
+#### Relevance
+Will be used as a basis for the discussion of noise.
+
+---
+
+### 12. CT image denoising methods for image quality improvement and radiation dose reduction
+    [2023, Medical Physics] https://aapm.onlinelibrary.wiley.com/doi/pdf/10.1002/acm2.14270
+
+#### Summary
+...
+
+#### Critique
+__Strengths:__ <br>
+__Weaknesses:__ 
+
+#### Relevance
+...
+
+---
+
+---
+
+### 13. Wavelet Integrated CNNs for Noise-Robust Image Classification
+    [2020, CVPR]  (https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_Wavelet_Integrated_CNNs_for_Noise-Robust_Image_Classification_CVPR_2020_paper.pdf)
+
+#### Summary
+...
+
+#### Critique
+__Strengths:__ Clear explanation, informative. Critical analysis on metrics <br>
+__Weaknesses:__ Limited in scope to Pediatrics, but still relevant in terms of the information provided.
+
+#### Relevance
+...
+
+---
+
+
