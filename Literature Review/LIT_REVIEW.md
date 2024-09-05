@@ -63,6 +63,16 @@
 
             16. Mohammadinejad P, Mileto A, Yu L, et al. CT noise-reduction methods for lower-dose scanning: strengths and weaknesses of iterative reconstruction algorithms and new techniques. RadioGraphics. 2021;41(5):1493-1508.
 
+            17. Antoni Buades, Bartomeu Coll, Jean-Michel Morel. A review of image denoising algorithms, with a new one. Multiscale Modeling and Simulation: A SIAM Interdisciplinary Journal, 2005, 4 (2), pp.490-530. ff10.1137/040616024ff. ffhal-00271141f
+
+            18. L. I. Rudin, S. Osher, and E. Fatemi, Nonlinear total variation based noise removal algorithms, Physica D, 60 (1992), pp. 259–268.
+
+            19. Mallat, S.G. A Theory for Multiresolution Signal Decomposition: The Wavelet Representation (1989) IEEE Transactions on Pattern Analysis and Machine Intelligence, 11 (7), pp. 674-693
+
+            20. 15. Zhao T, Hoffman J, Mcnitt-Gray M, Ruan D. Ultra-low-dose CT image denoising using modified BM3D scheme tailored to data statistics. Med Phys. 2019;46(1):190-198.
+
+            21.  H. Chen, Y. Zhang, M.K. Kalra, F. Lin, P. Liao, J. Zhou, G. Wang, Low-Dose CT with a Residual Encoder–Decoder Convolutional Neural Network (RED-CNN), 2017 arXiv preprint arXiv:1702.00288.
+
 
         Extra reading
 
@@ -404,3 +414,21 @@ __Weaknesses:__ Limited in scope to Pediatrics, but still relevant in terms of t
 ---
 
 
+
+
+DL(2)
+-	GANs
+-	Transformers
+-	Others (Dictionary learning, VAEs)
+-	Supervised vs unsupervised
+Metrics
+-	How to think about them:
+o	They are useful for getting a good overall idea
+o	Limitations
+-	List and describe them (make a table)
+Datasets
+-	Independence Test
+-	CTIA, Mayo etc.
+Simulation
+-	XCIST
+-	Other papers
