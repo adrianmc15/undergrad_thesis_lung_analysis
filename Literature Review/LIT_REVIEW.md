@@ -58,20 +58,18 @@
         Included below
 
             14. (.) D.-H. Trinh, T.-T. Nguyen, N. Linh-Trung, An effective example-based denoising method for CT images using Markov random field, in: Proc. IEEE Int. Conf. Advanced Technologies for Communications (ATC 2014), IEEE, Hanoi, 2014, pp. 355–359.
-
             15. L. A. Shepp and B. F. Logan, "The Fourier reconstruction of a head section," in IEEE Transactions on Nuclear Science, vol. 21, no. 3, pp. 21-43, June 1974, doi: 10.1109/TNS.1974.6499235. keywords: {Interpolation;Search methods;Fourier transforms;Bandwidth;Oscillators;Approximation algorithms;Spatial resolution},
-
             16. Mohammadinejad P, Mileto A, Yu L, et al. CT noise-reduction methods for lower-dose scanning: strengths and weaknesses of iterative reconstruction algorithms and new techniques. RadioGraphics. 2021;41(5):1493-1508.
-
             17. Antoni Buades, Bartomeu Coll, Jean-Michel Morel. A review of image denoising algorithms, with a new one. Multiscale Modeling and Simulation: A SIAM Interdisciplinary Journal, 2005, 4 (2), pp.490-530. ff10.1137/040616024ff. ffhal-00271141f
-
             18. L. I. Rudin, S. Osher, and E. Fatemi, Nonlinear total variation based noise removal algorithms, Physica D, 60 (1992), pp. 259–268.
-
             19. Mallat, S.G. A Theory for Multiresolution Signal Decomposition: The Wavelet Representation (1989) IEEE Transactions on Pattern Analysis and Machine Intelligence, 11 (7), pp. 674-693
-
             20. 15. Zhao T, Hoffman J, Mcnitt-Gray M, Ruan D. Ultra-low-dose CT image denoising using modified BM3D scheme tailored to data statistics. Med Phys. 2019;46(1):190-198.
-
             21.  H. Chen, Y. Zhang, M.K. Kalra, F. Lin, P. Liao, J. Zhou, G. Wang, Low-Dose CT with a Residual Encoder–Decoder Convolutional Neural Network (RED-CNN), 2017 arXiv preprint arXiv:1702.00288.
+            22. Tan C, Yang M, You Z, Chen H, Zhang Y. A selective kernel-based cycle-consistent generative adversarial network for unpaired low-dose CT denoising.Precis Clin Med. 2022;5(2): pbac011.
+            23. Wang G, Hu X. Low-dose CT denoising using a Progressive Wasserstein generative adversarial network. Comput Biol Med. 2021;135:104625.
+            24. Elbattah M, Loughnane C, Guérin J-L, et al. Variational autoencoder for image-based augmentation of eye-tracking data. J Imaging. 2021;7(5).
+            26. Zhang JZ, Ganesh H, Raslau FD, et al. Deep learning versus iterative reconstruction on image quality and dose reduction in abdominal CT: a live animal study. Phys Med Biol. 2022; 67(14).
+            27. [105] P. Perona, J. Malik, Scale-space and edge detection using anisotropic diffusion, IEEE Trans. Pattern Anal. Mach. Intell. 12 (7) (1990) 629–639
 
 
         Extra reading
@@ -110,6 +108,8 @@ __5. Focus of Approach:__ With all of the Locating, gaps etc. in mind, what tech
     - "Representational Models" (ie Fourier, Wavelet - describe the methods of denoising or ML that involve these)
         - include some papers about these models, and associated denoising methods
         - perhaps how they have been combined with CNNs
+            
+                25. Kim, B., Han, M., Shim, H. and Baek, J. (2019), A performance comparison of convolutional neural network-based image denoising methods: The effect of loss functions on low-dose CT images. Med. Phys., 46: 3906-3923. https://doi.org/10.1002/mp.13713
 
 3. ML Methods (4 papers):
     - Autoencoder-type models
